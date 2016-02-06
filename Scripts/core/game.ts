@@ -50,6 +50,8 @@ var head:Mesh;
 var neck:Mesh;
 var rightEye:Mesh;
 var leftEye:Mesh;
+var mouth:Mesh;
+var nose:Mesh;
 var plane: Mesh;
 
 var cubeGeometry: CubeGeometry;
@@ -62,6 +64,8 @@ var headCubeGeometry: CubeGeometry;
 var neckCubeGeometry: CubeGeometry;
 var rightEyeCubeGeometry: CubeGeometry;
 var leftEyeCubeGeometry: CubeGeometry;
+var mouthCubeGeometry: CubeGeometry;
+var noseCubeGeometry: CubeGeometry;
 var planeGeometry: PlaneGeometry;
 
 var cubeMaterial: LambertMaterial;
@@ -74,6 +78,8 @@ var leftArmCubeMaterial: LambertMaterial;
 var neckCubeMaterial: LambertMaterial;
 var rightEyeCubeMaterial: LambertMaterial;
 var leftEyeCubeMaterial: LambertMaterial;
+var mouthCubeMaterial: LambertMaterial;
+var noseCubeMaterial: LambertMaterial;
 var planeMaterial: LambertMaterial;
 
 var ambientLight: AmbientLight;
@@ -164,7 +170,7 @@ function init() {
     
     // Create right eye cube
     rightEyeCubeGeometry = new CubeGeometry(0.5, 0.5, 0.5);
-    rightEyeCubeMaterial = new LambertMaterial({ color: 238206179 });
+    rightEyeCubeMaterial = new LambertMaterial({ color: 0x4682B4 });
     rightEye = new Mesh(rightEyeCubeGeometry, rightEyeCubeMaterial);
     rightEye.castShadow = true;
     rightEye.receiveShadow = true;
@@ -175,7 +181,7 @@ function init() {
     
     // Create left eye cube
     leftEyeCubeGeometry = new CubeGeometry(0.5, 0.5, 0.5);
-    leftEyeCubeMaterial = new LambertMaterial({ color: 238206179 });
+    leftEyeCubeMaterial = new LambertMaterial({ color: 0x4682B4 });
     leftEye = new Mesh(leftEyeCubeGeometry, leftEyeCubeMaterial);
     leftEye.castShadow = true;
     leftEye.receiveShadow = true;
@@ -183,6 +189,28 @@ function init() {
     leftEye.position.y = 17.5;
     leftEye.position.z = 0.75;
     console.log("Left eye cube created");
+    
+    // Create mouth cube
+    mouthCubeGeometry = new CubeGeometry(0.5, 0.5, 1.5);
+    mouthCubeMaterial = new LambertMaterial({ color: 0xffffff });
+    mouth = new Mesh(mouthCubeGeometry, mouthCubeMaterial);
+    mouth.castShadow = true;
+    mouth.receiveShadow = true;
+    mouth.position.x = -1.5;
+    mouth.position.y = 15.5;
+    mouth.position.z = 0;
+    console.log("Mouth cube created");
+    
+    // Create nose cube
+    noseCubeGeometry = new CubeGeometry(1.5, 0.5, 0.5);
+    noseCubeMaterial = new LambertMaterial({ color: 0x4682B4 });
+    nose = new Mesh(noseCubeGeometry, noseCubeMaterial);
+    nose.castShadow = true;
+    nose.receiveShadow = true;
+    nose.position.x = -1.5;
+    nose.position.y = 16.5;
+    nose.position.z = 0;
+    console.log("Nose cube created");
     
     // Create right leg cube
     rightLegCubeGeometry = new CubeGeometry(2, 7, 2);
@@ -240,6 +268,8 @@ function init() {
     humanoid.add(neck);
     humanoid.add(rightEye);
     humanoid.add(leftEye);
+    humanoid.add(mouth);
+    humanoid.add(nose);
     
     
     // Add humanoid to the Scene
