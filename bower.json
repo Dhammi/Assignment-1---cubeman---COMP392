@@ -1,0 +1,25 @@
+{
+  "name": "Assignment-1---cubeman---COMP392",
+  "authors": [
+    "Dhammi"
+  ],
+  "description": "Assignment-1---cubeman---COMP392",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://github.com/Dhammi/Assignment-1---cubeman---COMP392.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Scripts/lib"
+  ],
+  "dependencies": {
+    "three.js": "threejs#*",
+    "dat-gui": "~0.5.1",
+    "stats.js": "*",
+    "threex.colliders": "*"
+  }
+}
